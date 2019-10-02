@@ -3,7 +3,7 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 
-TOKEN = os.getenv("DICORD_TOKEN")
+TOKEN = os.getenv("DISCORD_TOKEN")
 channel_id = '624886171553497098'
 message_color = 0xffffff
 
