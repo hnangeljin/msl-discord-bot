@@ -4,6 +4,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 TOKEN = os.getenv("DICORD_TOKEN")
+channel_id = '624886171553497098'
+message_color = 0xffffff
 
 client = discord.Client()
 
@@ -20,7 +22,7 @@ async def on_message(message):
      
 ##################################################################### room J
 
- if message.content.startswith("Newswpic") and message.channel.id ==('624886171553497098'):
+ if message.content.startswith("Newswpic") and message.channel.id ==(channel_id):
      a = ""
      b = ""
      x = ""
@@ -44,11 +46,12 @@ async def on_message(message):
      embed.set_thumbnail(url="")
      embed.add_field(name=" ~ N e w s ~", value= str(a), inline=False)
      embed.set_image(url= str(b))
-     await client.send_message(client.get_channel('544911289898500106'), embed=embed)
+     await client.get_channel('544911289898500106').send(embed=embed)
+     
 
 
  
- if message.content.startswith("Newssimple") and message.channel.id ==('624886171553497098'):
+ if message.content.startswith("Newssimple") and message.channel.id ==(channel_id):
      a = ""
      x = ""
      info = message.content
@@ -57,10 +60,10 @@ async def on_message(message):
      a =(x)
      embed=discord.Embed(title="", description=" ", url="", color=0xFFB6C1)
      embed.add_field(name=" ~ N e w s ~ ", value= str(a), inline=True)
-     await client.send_message(client.get_channel('544911289898500106'), embed=embed)
+     await client.get_channel('544911289898500106').send(embed=embed)
      
 
- if message.content.startswith("testsimple") and message.channel.id ==('624886171553497098'):
+ if message.content.startswith("testsimple") and message.channel.id ==(channel_id):
      a = ""
      x = ""
      info = message.content
@@ -69,10 +72,10 @@ async def on_message(message):
      a =(x)
      embed=discord.Embed(title="", description=" ", url="", color=0xFFB6C1)
      embed.add_field(name=" ~ N e w s ~ ", value= str(a), inline=True)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
- if message.content.startswith("testwpic") and message.channel.id ==('624886171553497098'):
+ if message.content.startswith("testwpic") and message.channel.id ==(channel_id):
      a = ""
      b = ""
      x = ""
@@ -96,7 +99,7 @@ async def on_message(message):
      embed.set_thumbnail(url="")
      embed.add_field(name=" ~ N e w s ~", value= str(a), inline=False)
      embed.set_image(url= str(b))
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
      
 ##################################################################### ju-bot
 
@@ -133,11 +136,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#1 Knuckles (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Soni','WaterSoni']]):
@@ -159,11 +162,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#2 Sonic (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Tail','WoodTail']]):
@@ -185,11 +188,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#3 Tails (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
  if message.content.startswith("Tail"):
      return
@@ -214,11 +217,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#4 Silver (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Shad','DarkShad']]):
@@ -240,11 +243,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#5 Shadow (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
  if message.content.startswith("Shad"):
      return
@@ -269,11 +272,12 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#6 Alpaca (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
+     
 
 
  if any([message.content.startswith (item) for item in ['Alpa','WaterAlpa']]):
@@ -295,11 +299,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#7 Alpaca (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Alpa','WoodAlpa']]):
@@ -321,11 +325,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#8 Alpaca (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Alpa','LightAlpa']]):
@@ -347,11 +351,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#9 Alpaca (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Alpa','DarkAlpa']]):
@@ -373,11 +377,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#10 Alpaca (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Ammo','FireAmmo']]):
@@ -399,11 +403,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#11 Ammonore (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Ammo','WaterAmmo']]):
@@ -425,11 +429,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#12 Ammonore (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Ammo','WoodAmmo']]):
@@ -451,11 +455,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#13 Ammonore (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Ammo','LightAmmo']]):
@@ -477,11 +481,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#14 Ammonore (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Ammo','DarkAmmo']]):
@@ -503,11 +507,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#15 Ammonore (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Anu ','FireAnu ']]):
@@ -529,11 +533,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#16 Anu (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Anu ','FireAnu ','SAnu ','FireSAnu ']]):
@@ -555,11 +559,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#17 Anu SE (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Anu ','WaterAnu ']]):
@@ -581,11 +585,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#18 Anu (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Anu ','WaterAnu ','SAnu ','WaterSAnu ']]):
@@ -607,11 +611,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#19 Anu SE (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Anu ','WoodAnu ']]):
@@ -633,11 +637,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#20 Anu (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Anu ','WoodAnu ','SAnu ','WoodSAnu ']]):
@@ -659,11 +663,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#21 Anu SE (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Anu ','LightAnu ']]):
@@ -685,11 +689,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#22 Anu (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Anu ','LightAnu ','SAnu ','LightSAnu ']]):
@@ -711,11 +715,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#23 Anu SE (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Anu ','DarkAnu ']]):
@@ -737,11 +741,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#24 Anu (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Anu ','DarkAnu ','SAnu ','DarkSAnu ']]):
@@ -763,11 +767,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#25 Anu SE (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Arc ','FireArc ']]):
@@ -789,11 +793,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#26 Arc (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Arc ','WaterArc ']]):
@@ -815,11 +819,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#27 Arc (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Arc ','WoodArc ']]):
@@ -841,11 +845,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#28 Arc (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
 
@@ -869,11 +873,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#31 Artemis (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Arte','WaterArte']]):
@@ -895,11 +899,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#32 Artemis (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Arte','WoodArte']]):
@@ -921,11 +925,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#33 Artemis (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Arte','LightArte']]):
@@ -947,11 +951,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#34 Artemis (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Arte','DarkArte']]):
@@ -973,11 +977,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#35 Artemis (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Arth','FireArth']]):
@@ -999,11 +1003,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#36 Arthur (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Arth','WaterArth']]):
@@ -1025,11 +1029,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#37 Arthur (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Arth','WoodArth']]):
@@ -1051,11 +1055,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#38 Arthur (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Arth','LightArth']]):
@@ -1077,11 +1081,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#39 Arthur (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Arth','DarkArth']]):
@@ -1103,11 +1107,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#40 Arthur (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Balr','FireBalr']]):
@@ -1129,11 +1133,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#41 Balrona (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Balr','WaterBalr']]):
@@ -1155,11 +1159,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#42 Balrona (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Balr','WoodBalr']]):
@@ -1181,11 +1185,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#43 Balrona (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Balr','LightBalr']]):
@@ -1207,11 +1211,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#44 Balrona (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Balr','DarkBalr']]):
@@ -1233,11 +1237,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#45 Balrona (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Bans','FireBans']]):
@@ -1259,11 +1263,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#46 Banshee (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Bans','WaterBans']]):
@@ -1285,11 +1289,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#47 Banshee (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Bans','WoodBans']]):
@@ -1311,11 +1315,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#48 Banshee (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Bans','LightBans']]):
@@ -1337,11 +1341,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#49 Banshee (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Bans','DarkBans']]):
@@ -1363,11 +1367,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#50 Banshee (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Bast','FireBast']]):
@@ -1389,11 +1393,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#51 Bast (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Bast','WaterBast']]):
@@ -1415,11 +1419,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#52 Bast (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Bast','WoodBast']]):
@@ -1441,11 +1445,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#53 Bast (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Bast','LightBast']]):
@@ -1467,11 +1471,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#54 Bast (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Bast','DarkBast']]):
@@ -1493,11 +1497,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#55 Bast (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Beat','FireBeat']]):
@@ -1519,11 +1523,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#56 Beatel (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Beat','WaterBeat']]):
@@ -1545,11 +1549,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#57 Beatel (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Beat','WoodBeat']]):
@@ -1571,11 +1575,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#58 Beatel (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Beat','LightBeat']]):
@@ -1597,11 +1601,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#59 Beatel (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Beat','DarkBeat']]):
@@ -1623,11 +1627,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#60 Beatel (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
 
@@ -1652,11 +1656,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#64 Beecomb (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Beec','DarkBeec']]):
@@ -1678,11 +1682,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#65 Beecomb (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Bell','FireBell']]):
@@ -1704,11 +1708,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#66 Bellpup (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Bell','WaterBell']]):
@@ -1730,11 +1734,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#67 Bellpup (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Bell','WoodBell']]):
@@ -1756,11 +1760,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#68 Bellpup (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
 
@@ -1784,11 +1788,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#71 Benjamin (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Benj','WaterBenj']]):
@@ -1810,11 +1814,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#72 Benjamin (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Benj','WoodBenj']]):
@@ -1836,11 +1840,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#73 Benjamin (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Benj','LightBenj']]):
@@ -1862,11 +1866,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#74 Benjamin (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Benj','DarkBenj']]):
@@ -1888,11 +1892,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#75 Benjamin (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Beth','FireBeth']]):
@@ -1914,11 +1918,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#76 Beth (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Beth','WaterBeth']]):
@@ -1940,11 +1944,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#77 Beth (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Beth','WoodBeth']]):
@@ -1966,11 +1970,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#78 Beth (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
 
@@ -1994,11 +1998,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#81 Birdie (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Bird','WaterBird']]):
@@ -2020,11 +2024,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#82 Birdie (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Bird','WoodBird']]):
@@ -2046,11 +2050,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#83 Birdie (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Bird','LightBird']]):
@@ -2072,11 +2076,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#84 Birdie (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Bird','DarkBird']]):
@@ -2098,11 +2102,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#85 Birdie (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Bolt','FireBolt']]):
@@ -2124,11 +2128,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#86 Boltwing (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Bolt','WaterBolt']]):
@@ -2150,11 +2154,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#87 Boltwing (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Bolt','WoodBolt']]):
@@ -2176,11 +2180,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#88 Boltwing (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
 
@@ -2205,11 +2209,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#92 Bon (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
 
@@ -2232,11 +2236,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#94 Bon (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
 
@@ -2259,11 +2263,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#96 Bron (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Bron','WaterBron']]):
@@ -2285,11 +2289,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#97 Bron (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Bron','WoodBron']]):
@@ -2311,11 +2315,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#98 Bron (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
 
@@ -2339,11 +2343,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#101 Bulbie (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Bulb','WaterBulb']]):
@@ -2365,11 +2369,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#102 Bulbie (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Bulb','WoodBulb']]):
@@ -2391,11 +2395,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#103 Bulbie (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Bulb','LightBulb']]):
@@ -2417,11 +2421,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#104 Bulbie (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Bulb','DarkBulb']]):
@@ -2443,11 +2447,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#105 Bulbie (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Cand','FireCand']]):
@@ -2469,11 +2473,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#106 Candling (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Cand','WaterCand']]):
@@ -2495,11 +2499,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#107 Candling (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Cand','WoodCand']]):
@@ -2521,11 +2525,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#108 Candling (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
 
@@ -2549,11 +2553,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#111 Canna (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Cann','WaterCann']]):
@@ -2575,11 +2579,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#112 Canna (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Cann','WoodCann']]):
@@ -2601,11 +2605,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#113 Canna (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Cann','LightCann']]):
@@ -2627,11 +2631,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#114 Canna (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Cann','DarkCann']]):
@@ -2653,11 +2657,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#115 Canna (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Chir','FireChir']]):
@@ -2679,11 +2683,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#116 Chiroptie (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Chir','WaterChir']]):
@@ -2705,11 +2709,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#117 Chiroptie (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Chir','WoodChir']]):
@@ -2731,11 +2735,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#118 Chiroptie (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Chir','LightChir']]):
@@ -2757,11 +2761,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#119 Chiroptie (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Chir','DarkChir']]):
@@ -2783,11 +2787,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#120 Chiroptie (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Chlo','FireChlo']]):
@@ -2809,11 +2813,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#121 Chloe (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Chlo','WaterChlo']]):
@@ -2835,11 +2839,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#122 Chloe (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Chlo','WoodChlo']]):
@@ -2861,11 +2865,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#123 Chloe (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Chlo','LightChlo']]):
@@ -2887,11 +2891,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#124 Chloe (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Chlo','DarkChlo']]):
@@ -2913,11 +2917,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#125 Chloe (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Coco','FireCoco']]):
@@ -2939,11 +2943,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#126 Cocomaru (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Coco','WaterCoco']]):
@@ -2965,11 +2969,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#127 Cocomaru (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Coco','WoodCoco']]):
@@ -2991,11 +2995,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#128 Cocomaru (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Coco','LightCoco']]):
@@ -3017,11 +3021,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#129 Cocomaru (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Coco','DarkCoco']]):
@@ -3043,11 +3047,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#130 Cocomaru (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
 
@@ -3072,11 +3076,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#134 Colte (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Colt','DarkColte']]):
@@ -3098,11 +3102,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#135 Colte (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
 
@@ -3127,11 +3131,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#139 Cosmo (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Cosm','DarkCosmo']]):
@@ -3153,11 +3157,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#140 Cosmo (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Cott','FireCott']]):
@@ -3179,11 +3183,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#141 Cotteen (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Cott','WaterCott']]):
@@ -3205,11 +3209,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#142 Cotteen (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Cott','WoodCott']]):
@@ -3231,11 +3235,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#143 Cotteen (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
 
@@ -3259,11 +3263,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#146 Crowhook (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Crow','WaterCrow']]):
@@ -3285,11 +3289,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#147 Crowhook (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Crow','WoodCrow']]):
@@ -3311,11 +3315,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#148 Crowhook (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
 
@@ -3339,11 +3343,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#151 Cupid (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Cupi','WaterCupi']]):
@@ -3365,11 +3369,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#152 Cupid (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Cupi','WoodCupi']]):
@@ -3391,11 +3395,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#153 Cupid (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Cupi','LightCupi']]):
@@ -3417,11 +3421,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#154 Cupid (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Cupi','DarkCupi']]):
@@ -3443,11 +3447,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#155 Cupid (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Cura','FireCura']]):
@@ -3469,11 +3473,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#156 Cura (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Cura','WaterCura']]):
@@ -3495,11 +3499,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#157 Cura (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Cura','WoodCura']]):
@@ -3521,11 +3525,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#158 Cura (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Cura','LightCura']]):
@@ -3547,11 +3551,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#159 Cura (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Cura','DarkCura']]):
@@ -3573,11 +3577,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#160 Cura (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ["D'art","FireD'art","Dart","FireDart"]]):
@@ -3599,11 +3603,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#161 Dartagnan (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ["D'art","WaterD'art","Dart","WaterDart"]]):
@@ -3625,11 +3629,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#162 Dartagnan (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ["D'art","WoodD'art","Dart","WoodDart"]]):
@@ -3651,11 +3655,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#163 Dartagnan (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ["D'art","LightD'art","Dart","LightDart"]]):
@@ -3677,11 +3681,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#164 Dartagnan (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ["D'art","DarkD'art","Dart","DarkDart"]]):
@@ -3703,11 +3707,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#165 Dartagnan (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Drak','FireDrak']]):
@@ -3729,11 +3733,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#166 Draka (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Drak','WaterDrak']]):
@@ -3755,11 +3759,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#167 Draka (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Drak','WoodDrak']]):
@@ -3781,11 +3785,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#168 Draka (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Drak','LightDrak']]):
@@ -3807,11 +3811,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#169 Draka (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Drak','DarkDrak']]):
@@ -3833,11 +3837,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#170 Draka (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Drow','FireDrow']]):
@@ -3859,11 +3863,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#171 Drowsey (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Drow','WaterDrow']]):
@@ -3885,11 +3889,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#172 Drowsey (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Drow','WoodDrow']]):
@@ -3911,11 +3915,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#173 Drowsey (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Drow','LightDrow']]):
@@ -3937,11 +3941,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#174 Drowsey (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Drow','DarkDrow']]):
@@ -3963,11 +3967,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#175 Drowsey (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Fenn','FireFenn']]):
@@ -3989,11 +3993,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#176 Fennec (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Fenn','WaterFenn']]):
@@ -4015,11 +4019,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#177 Fennec (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Fenn','WoodFenn']]):
@@ -4041,11 +4045,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#178 Fennec (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Fenn','LightFenn']]):
@@ -4067,11 +4071,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#179 Fennec (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Fenn','DarkFenn']]):
@@ -4093,11 +4097,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#180 Fennec (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
 
@@ -4121,11 +4125,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#183 Flora (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Flor','LightFlor']]):
@@ -4147,11 +4151,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#184 Flora (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Flor','DarlFlor']]):
@@ -4173,11 +4177,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#185 Flora (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Garg','FireGarg']]):
@@ -4199,11 +4203,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#186 Gargor (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Garg','WaterGarg']]):
@@ -4225,11 +4229,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#187 Gargor (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Garg','WoodGarg']]):
@@ -4251,11 +4255,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#188 Gargor (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
 
@@ -4279,11 +4283,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#191 Gatito (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Gati','WaterGati']]):
@@ -4305,11 +4309,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#192 Gatito (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Gati','WoodGati']]):
@@ -4331,11 +4335,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#193 Gatito (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Gati','LightGati']]):
@@ -4357,11 +4361,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#194 Gatito (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Gati','DarkGati']]):
@@ -4383,11 +4387,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#195 Gatito (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Garu','FireGaru']]):
@@ -4409,11 +4413,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#196 Garuda (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Garu','WaterGaru']]):
@@ -4435,11 +4439,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#197 Garuda (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Garu','WoodGaru']]):
@@ -4461,11 +4465,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#198 Garuda (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Garu','LightGaru']]):
@@ -4487,11 +4491,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#199 Garuda (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Garu','DarkGaru']]):
@@ -4513,11 +4517,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#200 Garuda (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Gemi','FireGemi']]):
@@ -4539,11 +4543,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#201 Gemini (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
 
@@ -4567,11 +4571,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#204 Gemini (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Gemi','DarkGemi']]):
@@ -4593,11 +4597,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#205 Gemini (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
 
@@ -4622,11 +4626,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#209 Ghos (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Ghos','DarkGhos']]):
@@ -4648,11 +4652,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#210 Ghos (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Grab','FireGrab']]):
@@ -4674,11 +4678,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#211 Grabag (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Grab','WaterGrab']]):
@@ -4700,11 +4704,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#212 Grabag (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Grab','WoodGrab']]):
@@ -4726,11 +4730,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#213 Grabag (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Grab','LightGrab']]):
@@ -4752,11 +4756,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#214 Grabag (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Grab','DarkGrab']]):
@@ -4778,11 +4782,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#215 Grabag (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
 
@@ -4805,11 +4809,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#217 Gupp (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
 
@@ -4834,11 +4838,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#221 Hades (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Hade','WaterHade']]):
@@ -4860,11 +4864,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#222 Hades (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Hade','WoodHade']]):
@@ -4886,11 +4890,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#223 Hades (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Hade','LightHade']]):
@@ -4912,11 +4916,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#224 Hades (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Hade','DarkHade']]):
@@ -4938,11 +4942,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#225 Hades (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Hana','FireHana']]):
@@ -4964,11 +4968,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#226 Hana (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Hana','WaterHana']]):
@@ -4990,11 +4994,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#227 Hana (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Hana','WoodHana']]):
@@ -5016,11 +5020,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#228 Hana (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Hana','LightHana']]):
@@ -5042,11 +5046,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#229 Hana (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Hana','DarkHana']]):
@@ -5068,11 +5072,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#230 Hana (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
 
@@ -5095,11 +5099,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#232 Hermite (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
 
@@ -5124,11 +5128,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#236 Hohenheim (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Hohe','WaterHohe']]):
@@ -5150,11 +5154,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#237 Hohenheim (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Hohe','WoodHohe']]):
@@ -5176,11 +5180,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#238 Hohenheim (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Hohe','LightHohe']]):
@@ -5202,11 +5206,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#239 Hohenheim (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Hohe','DarkHohe']]):
@@ -5228,11 +5232,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#240 Hohenheim (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Hunt','FireHunt']]):
@@ -5254,11 +5258,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#241 Hunter (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Hunt','WaterHunt']]):
@@ -5280,11 +5284,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#242 Hunter (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Hunt','WoodHunt']]):
@@ -5306,11 +5310,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#243 Hunter (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Hunt','LightHunt']]):
@@ -5332,11 +5336,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#244 Hunter (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Hunt','DarkHunt']]):
@@ -5358,11 +5362,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#245 Hunter (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Incu','FireIncu']]):
@@ -5384,11 +5388,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#246 Incubus (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Incu','WaterIncu']]):
@@ -5410,11 +5414,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#247 Incubus (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Incu','WoodIncu']]):
@@ -5436,11 +5440,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#248 Incubus (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Incu','LightIncu']]):
@@ -5462,11 +5466,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#249 Incubus (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Incu','DarkIncu']]):
@@ -5488,11 +5492,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#250 Incubus (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Indr','FireIndr']]):
@@ -5514,11 +5518,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#251 Indra (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Indr','WaterIndr']]):
@@ -5540,11 +5544,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#252 Indra (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Indr','WoodIndr']]):
@@ -5566,11 +5570,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#253 Indra (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Indr','LightIndr']]):
@@ -5592,11 +5596,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#254 Indra (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Indr','DarkIndr']]):
@@ -5618,11 +5622,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#255 Indra (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Jack','FireJack']]):
@@ -5644,11 +5648,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#256 Jack-O-Little (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Jack','WaterJack']]):
@@ -5670,11 +5674,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#257 Jack-O-Little (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Jack','WoodJack']]):
@@ -5696,11 +5700,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#258 Jack-O-Little (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Jack','LightJack']]):
@@ -5722,11 +5726,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#259 Jack-O-Little (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Jack','DarkJack']]):
@@ -5748,11 +5752,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#260 Jack-O-Little (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Jean','FireJean']]):
@@ -5774,11 +5778,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#261 Jeanne (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Jean','WaterJean']]):
@@ -5800,11 +5804,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#262 Jeanne (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Jean','WoodJean']]):
@@ -5826,11 +5830,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#263 Jeanne (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Jean','LightJean']]):
@@ -5852,11 +5856,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#264 Jeanne (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Jean','DarkJean']]):
@@ -5878,11 +5882,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#265 Jeanne (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Jell','FireJell']]):
@@ -5904,11 +5908,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#266 Jellai (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Jell','WaterJell']]):
@@ -5930,11 +5934,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#267 Jellai (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Jell','WoodJell']]):
@@ -5956,11 +5960,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#268 Jellai (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Jell','LightJell']]):
@@ -5982,11 +5986,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#269 Jellai (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Jell','DarkJell']]):
@@ -6008,11 +6012,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#270 Jellai (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Jian','FireJian']]):
@@ -6034,11 +6038,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#271 Jiangshi (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Jian','WaterJian']]):
@@ -6060,11 +6064,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#272 Jiangshi (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Jian','WoodJian']]):
@@ -6086,11 +6090,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#273 Jiangshi (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Jian','LightJian']]):
@@ -6112,11 +6116,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#274 Jiangshi (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Jian','DarkJian']]):
@@ -6138,11 +6142,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#275 Jiangshi (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Jinn','FireJinn']]):
@@ -6164,11 +6168,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#276 Jinn (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Jinn','WaterJinn']]):
@@ -6190,11 +6194,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#277 Jinn (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Jinn','WoodJinn']]):
@@ -6216,11 +6220,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#278 Jinn (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Jinn','LightJinn']]):
@@ -6242,11 +6246,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#279 Jinn (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Jinn','DarkJinn']]):
@@ -6268,11 +6272,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#280 Jinn (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Kiki','FireKiki']]):
@@ -6294,11 +6298,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#281 Kiki (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Kiki','WaterKiki']]):
@@ -6320,11 +6324,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#282 Kiki (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Kiki','WoodKiki']]):
@@ -6346,11 +6350,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#283 Kiki (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Kiki','LightKiki']]):
@@ -6372,11 +6376,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#284 Kiki (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Kiki','DarkKiki']]):
@@ -6398,11 +6402,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#285 Kiki (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
 
@@ -6427,11 +6431,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#289 Kilobat (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Kilo','DarkKilo']]):
@@ -6453,11 +6457,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#290 Kilobat (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Latt','FireLatt']]):
@@ -6479,11 +6483,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#291 Latt (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Latt','WaterLatt']]):
@@ -6505,11 +6509,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#292 Latt (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Latt','WoodLatt']]):
@@ -6531,11 +6535,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#293 Latt (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Latt','LightLatt']]):
@@ -6557,11 +6561,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#294 Latt (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Latt','DarkLatt']]):
@@ -6583,11 +6587,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#295 Latt (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Leo ','FireLeo ']]):
@@ -6609,11 +6613,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#296 Leo (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Leo ','FireLeo ','SLeo ','FireSLeo ']]):
@@ -6635,11 +6639,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#297 Leo SE (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Leo ','WaterLeo ']]):
@@ -6661,11 +6665,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#298 Leo (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Leo ','WaterLeo ','SLeo ','WaterSLeo ']]):
@@ -6687,11 +6691,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#299 Leo SE (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Leo ','WoodLeo ']]):
@@ -6713,11 +6717,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#300 Leo (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Leo ','WoodLeo ','SLeo ','WoodSLeo ']]):
@@ -6739,11 +6743,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#301 Leo SE (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Leo ','LightLeo ']]):
@@ -6765,11 +6769,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#302 Leo (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Leo ','LightLeo ','SLeo ','LightSLeo ']]):
@@ -6791,11 +6795,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#303 Leo SE (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Leo ','DarkLeo ']]):
@@ -6817,11 +6821,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#304 Leo (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Leo ','DarkLeo ','SLeo ','DarkSLeo ']]):
@@ -6843,11 +6847,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#305 Leo SE (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Loki','FireLoki']]):
@@ -6869,11 +6873,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#306 Loki (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Loki','WaterLoki']]):
@@ -6895,11 +6899,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#307 Loki (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Loki','WoodLoki']]):
@@ -6921,11 +6925,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#308 Loki (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Loki','LightLoki']]):
@@ -6947,11 +6951,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#309 Loki (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Loki','DarkLoki']]):
@@ -6973,11 +6977,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#310 Loki (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Lucy','FireLucy']]):
@@ -6999,11 +7003,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#311 Lucy (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Lucy','WaterLucy']]):
@@ -7025,11 +7029,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#312 Lucy (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Lucy','WoodLucy']]):
@@ -7051,11 +7055,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#313 Lucy (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Lucy','LightLucy']]):
@@ -7077,11 +7081,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#314 Lucy (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Lucy','DarkLucy']]):
@@ -7103,11 +7107,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#315 Lucy (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Lumo','FireLumo']]):
@@ -7129,11 +7133,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#316 Lumo (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Lumo','WaterLumo']]):
@@ -7155,11 +7159,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#317 Lumo (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Lumo','WoodLumo']]):
@@ -7181,11 +7185,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#318 Lumo (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
 
@@ -7209,11 +7213,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#321 Lupin (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Lupi','WaterLupi']]):
@@ -7235,11 +7239,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#322 Lupin (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Lupi','WoodLupi']]):
@@ -7261,11 +7265,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#323 Lupin (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
 
@@ -7288,11 +7292,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#325 Lupin (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Mamm','FireMamm']]):
@@ -7314,11 +7318,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#326 Mammont (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Mamm','WaterMamm']]):
@@ -7340,11 +7344,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#327 Mammont (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Mamm','WoodMamm']]):
@@ -7366,11 +7370,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#328 Mammont (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Mamm','LightMamm']]):
@@ -7392,11 +7396,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#329 Mammont (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Mamm','DarkMamm']]):
@@ -7418,11 +7422,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#330 Mammont (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Mand','FireMand']]):
@@ -7444,11 +7448,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#331 Mandragora (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Mand','WaterMand']]):
@@ -7470,11 +7474,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#332 Mandragora (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Mand','WoodMand']]):
@@ -7496,11 +7500,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#333 Mandragora (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Mand','LightMand']]):
@@ -7522,11 +7526,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#334 Mandragora (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Mand','DarkMand']]):
@@ -7548,11 +7552,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#335 Mandragora (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Mane','FireMane']]):
@@ -7574,11 +7578,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#336 Manelant (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Mane','WaterMane']]):
@@ -7600,11 +7604,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#337 Manelant (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Mane','WoodMane']]):
@@ -7626,11 +7630,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#338 Manelant (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
 
@@ -7654,11 +7658,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#341 Mari (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Mari','WaterMari']]):
@@ -7680,11 +7684,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#342 Mari (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Mari','WoodMari']]):
@@ -7706,11 +7710,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#343 Mari (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Mari','LightMari']]):
@@ -7732,11 +7736,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#344 Mari (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Mari','DarkMari']]):
@@ -7758,11 +7762,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#345 Mari (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Medu','FireMedu']]):
@@ -7784,11 +7788,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#346 Medusa (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Medu','WaterMedu']]):
@@ -7810,11 +7814,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#347 Medusa (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Medu','WoodMedu']]):
@@ -7836,11 +7840,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#348 Medusa (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Medu','LightMedu']]):
@@ -7862,11 +7866,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#349 Medusa (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Medu','DarkMedu']]):
@@ -7888,11 +7892,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#350 Medusa (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Mera','FireMera']]):
@@ -7914,11 +7918,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#351 Mera (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Mera','WaterMera']]):
@@ -7940,11 +7944,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#352 Mera (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Mera','WoodMera']]):
@@ -7966,11 +7970,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#353 Mera (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Mera','LightMera']]):
@@ -7992,11 +7996,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#354 Mera (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Mera','DarkMera']]):
@@ -8018,11 +8022,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#355 Mera (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Merl','FireMerl']]):
@@ -8044,11 +8048,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#356 Merlin (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Merl','WaterMerl']]):
@@ -8070,11 +8074,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#357 Merlin (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Merl','WoodMerl']]):
@@ -8096,11 +8100,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#358 Merlin (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Merl','LightMerl']]):
@@ -8122,11 +8126,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#359 Merlin (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Merl','DarkMerl']]):
@@ -8148,11 +8152,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#360 Merlin (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Miho','FireMiho']]):
@@ -8174,11 +8178,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#361 Miho (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Miho','FireMiho','SMiho','FireSMiho']]):
@@ -8200,11 +8204,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#362 Miho SE (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Miho','WaterMiho']]):
@@ -8226,11 +8230,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#363 Miho (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Miho','WaterMiho','SMiho','WaterSMiho']]):
@@ -8252,11 +8256,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#364 Miho SE (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Miho','WoodMiho']]):
@@ -8278,11 +8282,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#365 Miho (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Miho','WoodMiho','SMiho','WoodSMiho']]):
@@ -8304,11 +8308,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#366 Miho SE (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Miho','LightMiho']]):
@@ -8330,11 +8334,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#367 Miho (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Miho','LightMiho','SMiho','LightSMiho']]):
@@ -8356,11 +8360,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#368 Miho SE (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Miho','DarkMiho']]):
@@ -8382,11 +8386,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#369 Miho (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Miho','DarkMiho','SMiho','DarkSMiho']]):
@@ -8408,11 +8412,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#370 Miho SE (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Mild','FireMild']]):
@@ -8434,11 +8438,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#371 Mildeu (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Mild','WaterMild']]):
@@ -8460,11 +8464,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#372 Mildeu (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Mild','WoodMild']]):
@@ -8486,11 +8490,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#373 Mildeu (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Mild','LightMild']]):
@@ -8512,11 +8516,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#374 Mildeu (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Mild','DarkMild']]):
@@ -8538,11 +8542,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#375 Mildeu (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Mimi','FireMimi']]):
@@ -8564,11 +8568,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#376 Mimic (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Mimi','WaterMimi']]):
@@ -8590,11 +8594,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#377 Mimic (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Mimi','WoodMimi']]):
@@ -8616,11 +8620,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#378 Mimic (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Mimi','LightMimi']]):
@@ -8642,11 +8646,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#379 Mimic (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Mimi','DarkMimi']]):
@@ -8668,11 +8672,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#380 Mimic (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Minica','FireMinica']]):
@@ -8694,11 +8698,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#381 Minicat (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Minica','WaterMinica']]):
@@ -8720,11 +8724,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#382 Minicat (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Minica','WoodMinica']]):
@@ -8746,11 +8750,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#383 Minicat (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
 
@@ -8777,11 +8781,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#389 Mini Camilla (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['MiniC','DarkMiniC','Minicam','DarkMinicam','Camilla','DarkCami']]):
@@ -8803,11 +8807,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#390 Mini Camilla (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
 
@@ -8832,11 +8836,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#394 Mini Seira (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['MiniS','DarkMiniS','Minis','DarkMinis','Seira','DarkSeira']]):
@@ -8858,11 +8862,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#395 Mini Seira (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
 
@@ -8887,11 +8891,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#399 Mini Tina (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['MiniT','DarkMiniT','Minit','DarkMinit','Tina','DarkTina']]):
@@ -8913,11 +8917,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#400 Mini Tina (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Mino','FireMino']]):
@@ -8939,11 +8943,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#401 Mino (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Mino','WaterMino']]):
@@ -8965,11 +8969,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#402 Mino (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Mino','WoodMino']]):
@@ -8991,11 +8995,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#403 Mino (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Mino','LightMino']]):
@@ -9017,11 +9021,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#404 Mino (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Mino','DarkMino']]):
@@ -9043,11 +9047,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#405 Mino (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Mish','FireMish']]):
@@ -9069,11 +9073,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#406 Misha (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Mish','WaterMish']]):
@@ -9095,11 +9099,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#407 Misha (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Mish','WoodMish']]):
@@ -9121,11 +9125,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#408 Misha (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Mish','LightMish']]):
@@ -9147,11 +9151,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#409 Misha (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Mish','DarkMish']]):
@@ -9173,11 +9177,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#410 Misha (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Mole','FireMole']]):
@@ -9199,11 +9203,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#411 Moler (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Mole','WaterMole']]):
@@ -9225,11 +9229,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#412 Moler (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Mole','WoodMole']]):
@@ -9251,11 +9255,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#413 Moler (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
 
@@ -9279,11 +9283,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#416 Mona (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Mona','WaterMona']]):
@@ -9305,11 +9309,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#417 Mona (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Mona','WoodMona']]):
@@ -9331,11 +9335,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#418 Mona (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Mona','LightMona']]):
@@ -9357,11 +9361,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#419 Mona (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Mona','DarkMona']]):
@@ -9383,11 +9387,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#420 Mona (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Monk','FireMonk']]):
@@ -9409,11 +9413,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#421 Monkiki (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Monk','WaterMonk']]):
@@ -9435,11 +9439,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#422 Monkiki (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Monk','WoodMonk']]):
@@ -9461,11 +9465,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#423 Monkiki (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Monk','LightMonk']]):
@@ -9487,11 +9491,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#424 Monkiki (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Monk','DarkMonk']]):
@@ -9513,11 +9517,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#425 Monkiki (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Mowg','FireMowg']]):
@@ -9539,11 +9543,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#426 Mowgli (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Mowg','WaterMowg']]):
@@ -9565,11 +9569,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#427 Mowgli (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Mowg','WoodMowg']]):
@@ -9591,11 +9595,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#428 Mowgli (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Mowg','LightMowg']]):
@@ -9617,11 +9621,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#429 Mowgli (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Mowg','DarkMowg']]):
@@ -9643,11 +9647,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#430 Mowgli (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Mush','FireMush']]):
@@ -9669,11 +9673,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#431 Mushi (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Mush','WaterMush']]):
@@ -9695,11 +9699,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#432 Mushi (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Mush','WoodMush']]):
@@ -9721,11 +9725,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#433 Mushi (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
 
@@ -9749,11 +9753,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#436 Nezha (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Nezh','WaterNezh']]):
@@ -9775,11 +9779,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#437 Nezha (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Nezh','WoodNezh']]):
@@ -9801,11 +9805,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#438 Nezha (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Nezh','LightNezh']]):
@@ -9827,11 +9831,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#439 Nezha (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Nezh','DarkNezh']]):
@@ -9853,11 +9857,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#440 Nezha (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
 
@@ -9882,11 +9886,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#444 Nifa (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Nifa','DarkNifa']]):
@@ -9908,11 +9912,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#445 Nifa (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Nigh','FireNigh']]):
@@ -9934,11 +9938,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#446 Nightmare (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Nigh','WaterNigh']]):
@@ -9960,11 +9964,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#447 Nightmare (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Nigh','WoodNigh']]):
@@ -9986,11 +9990,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#448 Nightmare (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Nigh','LightNigh']]):
@@ -10012,11 +10016,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#449 Nightmare (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Nigh','DarkNigh']]):
@@ -10038,11 +10042,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#450 Nightmare (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Odin','FireOdin']]):
@@ -10064,11 +10068,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#451 Odin (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Odin','WaterOdin']]):
@@ -10090,11 +10094,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#452 Odin (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Odin','WoodOdin']]):
@@ -10116,11 +10120,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#453 Odin (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Odin','LightOdin']]):
@@ -10142,11 +10146,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#454 Odin (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Odin','DarkOdin']]):
@@ -10168,11 +10172,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#455 Odin (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Onmy','FireOnmy']]):
@@ -10194,11 +10198,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#456 Onmyouji (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Onmy','WaterOnmy']]):
@@ -10220,11 +10224,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#457 Onmyouji (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Onmy','WoodOnmy']]):
@@ -10246,11 +10250,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#458 Onmyouji (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Onmy','LightOnmy']]):
@@ -10272,11 +10276,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#459 Onmyouji (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Onmy','DarkOnmy']]):
@@ -10298,11 +10302,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#460 Onmyouji (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Otar','FireOtar']]):
@@ -10324,11 +10328,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#461 Otari (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Otar','WaterOtar']]):
@@ -10350,11 +10354,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#462 Otari (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Otar','WoodOtar']]):
@@ -10376,11 +10380,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#463 Otari (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Otar','LightOtar']]):
@@ -10402,11 +10406,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#464 Otari (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Otar','DarkOtar']]):
@@ -10428,11 +10432,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#465 Otari (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Pebb','FirePebb']]):
@@ -10454,11 +10458,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#466 Pebbol (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
 
@@ -10484,11 +10488,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#471 Pegasus (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Pega','WaterPega']]):
@@ -10510,11 +10514,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#472 Pegasus (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Pega','WoodPega']]):
@@ -10536,11 +10540,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#473 Pegasus (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Pega','LightPega']]):
@@ -10562,11 +10566,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#474 Pegasus (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Pega','DarkPega']]):
@@ -10588,11 +10592,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#475 Pegasus (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Penp','FirePenp']]):
@@ -10614,11 +10618,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#476 Penpen (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Penp','WaterPenp']]):
@@ -10640,11 +10644,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#477 Penpen (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Penp','WoodPenp']]):
@@ -10666,11 +10670,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#478 Penpen (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Penp','LightPenp']]):
@@ -10692,11 +10696,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#479 Penpen (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Penp','DarkPenp']]):
@@ -10718,11 +10722,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#480 Penpen (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Pers','FirePers']]):
@@ -10744,11 +10748,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#481 Persephone (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Pers','WaterPers']]):
@@ -10770,11 +10774,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#482 Persephone (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Pers','WoodPers']]):
@@ -10796,11 +10800,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#483 Persephone (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Pers','LightPers']]):
@@ -10822,11 +10826,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#484 Persephone (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Pers','DarkPers']]):
@@ -10848,11 +10852,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#485 Persephone (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Peyo','FirePeyo']]):
@@ -10874,11 +10878,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#486 Peyote (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Peyo','WaterPeyo']]):
@@ -10900,11 +10904,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#487 Peyote (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Peyo','WoodPeyo']]):
@@ -10926,11 +10930,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#488 Peyote (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Peyo','LightPeyo']]):
@@ -10952,11 +10956,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#489 Peyote (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Peyo','DarkPeyo']]):
@@ -10978,11 +10982,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#490 Peyote (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Phib','FirePhib']]):
@@ -11004,11 +11008,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#491 Phibian (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Phib','WaterPhib']]):
@@ -11030,11 +11034,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#492 Phibian (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Phib','WoodPhib']]):
@@ -11056,11 +11060,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#493 Phibian (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Phib','LightPhib']]):
@@ -11082,11 +11086,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#494 Phibian (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Phib','DarkPhib']]):
@@ -11108,11 +11112,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#495 Phibian (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Pinc','FirePinc']]):
@@ -11134,11 +11138,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#496 Pinchee (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Pinc','WaterPinc']]):
@@ -11160,11 +11164,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#497 Pinchee (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Pinc','WoodPinc']]):
@@ -11186,11 +11190,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#498 Pinchee (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
 
@@ -11216,11 +11220,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#503 Pinolo (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Pino','LightPino']]):
@@ -11242,11 +11246,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#504 Pinolo (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Pino','DarkPino']]):
@@ -11268,11 +11272,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#505 Pinolo (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
 
@@ -11296,11 +11300,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#508 Pinolo Lie (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Pino','LightPino']]):
@@ -11322,11 +11326,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#509 Pinolo Lie (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Pino','DarkPino']]):
@@ -11348,11 +11352,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#510 Pinolo Lie (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Pixi','FirePixi']]):
@@ -11374,11 +11378,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#511 Pixie (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Pixi','WaterPixi']]):
@@ -11400,11 +11404,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#512 Pixie (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Pixi','WoodPixi']]):
@@ -11426,11 +11430,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#513 Pixie (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Pixi','LightPixi']]):
@@ -11452,11 +11456,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#514 Pixie (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Pixi','DarkPixi']]):
@@ -11478,11 +11482,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#515 Pixie (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Pose','FirePose']]):
@@ -11504,11 +11508,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#516 Poseidon (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Pose','WaterPose']]):
@@ -11530,11 +11534,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#517 Poseidon (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Pose','WoodPose']]):
@@ -11556,11 +11560,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#518 Poseidon (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Pose','LightPose']]):
@@ -11582,11 +11586,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#519 Poseidon (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Pose','DarkPose']]):
@@ -11608,11 +11612,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#520 Poseidon (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
 
@@ -11636,11 +11640,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#523 Rabbitle (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Rabb','LightRabb']]):
@@ -11662,11 +11666,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#524 Rabbitle (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Rabb','DarkRabb']]):
@@ -11688,11 +11692,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#525 Rabbitle (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Radi','FireRadi']]):
@@ -11714,11 +11718,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#526 Radis (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Radi','WaterRadi']]):
@@ -11740,11 +11744,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#527 Radis (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Radi','WoodRadi']]):
@@ -11766,11 +11770,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#528 Radis (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Radi','LightRadi']]):
@@ -11792,11 +11796,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#529 Radis (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Radi','DarkRadi']]):
@@ -11818,11 +11822,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#530 Radis (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Ramu','FireRamu']]):
@@ -11844,11 +11848,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#531 Ramu (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Ramu','WaterRamu']]):
@@ -11870,11 +11874,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#532 Ramu (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Ramu','WoodRamu']]):
@@ -11896,11 +11900,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#533 Ramu (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Ramu','LightRamu']]):
@@ -11922,11 +11926,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#534 Ramu (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Ramu','DarkRamu']]):
@@ -11948,11 +11952,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#535 Ramu (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
 
@@ -11977,11 +11981,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#539 Robobot (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Robo','DarkRobo']]):
@@ -12003,11 +12007,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#540 Robobot (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Roca','FireRoca']]):
@@ -12029,11 +12033,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#541 Roca (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Roca','WaterRoca']]):
@@ -12055,11 +12059,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#542 Roca (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Roca','WoodRoca']]):
@@ -12081,11 +12085,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#543 Roca (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
 
@@ -12112,11 +12116,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#549 Rocky (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Rock','DarkRobo']]):
@@ -12138,11 +12142,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#550 Rocky (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
 
@@ -12166,11 +12170,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#553 Rowan (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
 
@@ -12196,11 +12200,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#558 Rudolph (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Rudo','LightRudo']]):
@@ -12222,11 +12226,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#559 Rudolph (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Rudo','DarkRudo']]):
@@ -12248,11 +12252,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#560 Rudolph (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Sand','FireSand']]):
@@ -12274,11 +12278,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#561 Sand Wraith (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Sand','WaterSand']]):
@@ -12300,11 +12304,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#562 Sand Wraith (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Sand','WoodSand']]):
@@ -12326,11 +12330,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#563 Sand Wraith (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Sand','LightSand']]):
@@ -12352,11 +12356,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#564 Sand Wraith (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Sand','DarkSand']]):
@@ -12378,11 +12382,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#565 Sand Wraith (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Sanz','FireSanz']]):
@@ -12404,11 +12408,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#566 Sanzang (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Sanz','WaterSanz']]):
@@ -12430,11 +12434,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#567 Sanzang (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Sanz','WoodSanz']]):
@@ -12456,11 +12460,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#568 Sanzang (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Sanz','LightSanz']]):
@@ -12482,11 +12486,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#569 Sanzang (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Sanz','DarkSanz']]):
@@ -12508,11 +12512,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#570 Sanzang (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Seas','FireSeas']]):
@@ -12534,11 +12538,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#571 Seastar (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Seas','WaterSeas']]):
@@ -12560,11 +12564,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#572 Seastar (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Seas','WoodSeas']]):
@@ -12586,11 +12590,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#573 Seastar (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Seas','LightSeas']]):
@@ -12612,11 +12616,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#574 Seastar (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Seas','DarkSeas']]):
@@ -12638,11 +12642,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#575 Seastar (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Seed','FireSeed']]):
@@ -12664,11 +12668,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#576 Seedler (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Seed','WaterSeed']]):
@@ -12690,11 +12694,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#577 Seedler (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Seed','WoodSeed']]):
@@ -12716,11 +12720,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#578 Seedler (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Seed','LightSeed']]):
@@ -12742,11 +12746,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#579 Seedler (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Seed','DarkSeed']]):
@@ -12768,11 +12772,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#580 Seedler (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Seir','FireSeir']]):
@@ -12794,11 +12798,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#581 Seiren (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Seir','WaterSeir']]):
@@ -12820,11 +12824,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#582 Seiren (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Seir','WoodSeir']]):
@@ -12846,11 +12850,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#583 Seiren (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Seir','LightSeir']]):
@@ -12872,11 +12876,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#584 Seiren (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Seir','DarkSeir']]):
@@ -12898,11 +12902,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#585 Seiren (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Sha','FireSha']]):
@@ -12924,11 +12928,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#586 Sha Wujing (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Sha','WaterSha']]):
@@ -12950,11 +12954,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#587 Sha Wujing (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Sha','WoodSha']]):
@@ -12976,11 +12980,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#588 Sha Wujing (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Sha','LightSha']]):
@@ -13002,11 +13006,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#589 Sha Wujing (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Sha','DarkSha']]):
@@ -13028,11 +13032,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#590 Sha Wujing (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Shel','FireShel']]):
@@ -13054,11 +13058,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#591 Shellie (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Shel','WaterShel']]):
@@ -13080,11 +13084,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#592 Shellie (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Shel','WoodShel']]):
@@ -13106,11 +13110,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#593 Shellie (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
 
@@ -13134,11 +13138,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#596 Sherlock (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Sher','WaterSher']]):
@@ -13160,11 +13164,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#597 Sherlock (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Sher','WoodSher']]):
@@ -13186,11 +13190,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#598 Sherlock (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Sher','LightSher']]):
@@ -13212,11 +13216,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#599 Sherlock (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
 
@@ -13239,11 +13243,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#601 Shinobi (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Shin','WaterShin']]):
@@ -13265,11 +13269,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#602 Shinobi (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Shin','WoodShin']]):
@@ -13291,11 +13295,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#603 Shinobi (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Shin','LightShin']]):
@@ -13317,11 +13321,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#604 Shinobi (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Shin','DarkShin']]):
@@ -13343,11 +13347,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#605 Shinobi (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Shiv','FireShiv']]):
@@ -13369,11 +13373,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#606 Shiva (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Shiv','WaterShiv']]):
@@ -13395,11 +13399,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#607 Shiva (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Shiv','WoodShiv']]):
@@ -13421,11 +13425,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#608 Shiva (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Shiv','LightShiv']]):
@@ -13447,11 +13451,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#609 Shiva (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Shiv','DarkShiv']]):
@@ -13473,11 +13477,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#610 Shiva (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Sieg','FireSieg']]):
@@ -13499,11 +13503,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#611 Siegfried (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Sieg','WaterSieg']]):
@@ -13525,11 +13529,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#612 Siegfried (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Sieg','WoodSieg']]):
@@ -13551,11 +13555,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#613 Siegfried (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Sieg','LightSieg']]):
@@ -13577,11 +13581,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#614 Siegfried (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Sieg','DarkSieg']]):
@@ -13603,11 +13607,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#615 Siegfried (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['SlimeSo','FireSlimeSo','Slimeso','FireSlimeso']]):
@@ -13629,11 +13633,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#621 Slimesoldier (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['SlimeSo','WaterSlimeSo','Slimeso','WaterSlimeso']]):
@@ -13655,11 +13659,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#622 Slimesoldier (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['SlimeSo','WoodSlimeSo','Slimeso','WoodSlimeso']]):
@@ -13681,11 +13685,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#623 Slimesoldier (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['SlimeSo','LightSlimeSo','Slimeso','LightSlimeso']]):
@@ -13707,11 +13711,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#624 Slimesoldier (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['SlimeSo','DarkSlimeSo','Slimeso','DarkSlimeso']]):
@@ -13733,11 +13737,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#625 Slimesoldier (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
      
  if message.content.startswith("SlimeSo"):
@@ -13797,11 +13801,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#616 Slime (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Slim','WaterSlim']]):
@@ -13823,11 +13827,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#617 Slime (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Slim','WoodSlim']]):
@@ -13849,11 +13853,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#618 Slime (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Slim','LightSlim']]):
@@ -13875,11 +13879,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#619 Slime (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Slim','DarkSlim']]):
@@ -13901,11 +13905,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#620 Slime (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
 
@@ -13928,11 +13932,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#627 Snowee (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Snow','LightSnow']]):
@@ -13954,11 +13958,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#629 Snowee (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Snow','DarkSnow']]):
@@ -13980,11 +13984,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#630 Snowee (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Spar','FireSpar']]):
@@ -14006,11 +14010,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#631 Sparkitt (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Spar','WaterSpar']]):
@@ -14032,11 +14036,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#632 Sparkitt (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Spar','WoodSpar']]):
@@ -14058,11 +14062,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#633 Sparkitt (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Spar','LightSpar']]):
@@ -14084,11 +14088,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#634 Sparkitt (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Spar','DarkSpar']]):
@@ -14110,11 +14114,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#635 Sparkitt (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Spar','FireSpar']]):
@@ -14136,11 +14140,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#636 Sparkler (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Spar','WaterSpar']]):
@@ -14162,11 +14166,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#637 Sparkler (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Spar','WoodSpar']]):
@@ -14188,11 +14192,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#638 Sparkler (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Spar','LightSpar']]):
@@ -14214,11 +14218,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#639 Sparkler (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Spar','DarkSpar']]):
@@ -14240,11 +14244,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#640 Sparkler (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Sphy','FireSphy']]):
@@ -14266,11 +14270,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#641 Sphynx (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Sphy','WaterSphy']]):
@@ -14292,11 +14296,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#642 Sphynx (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Sphy','WoodSphy']]):
@@ -14318,11 +14322,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#643 Sphynx (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Sphy','LightSphy']]):
@@ -14344,11 +14348,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#644 Sphynx (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Sphy','DarkSphy']]):
@@ -14370,11 +14374,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#645 Sphynx (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Squi','FireSqui']]):
@@ -14396,11 +14400,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#646 Squirrus (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Squi','WaterSqui']]):
@@ -14422,11 +14426,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#647 Squirrus (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Squi','WoodSqui']]):
@@ -14448,11 +14452,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#648 Squirrus (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
 
@@ -14476,11 +14480,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#651 Starrov (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Star','WaterStar']]):
@@ -14502,11 +14506,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#652 Starrov (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Star','WoodStar']]):
@@ -14528,11 +14532,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#653 Starrov (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
 
@@ -14556,11 +14560,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#656 Succubus (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Succ','FireSucc','SSucc','FireSSucc']]):
@@ -14582,11 +14586,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#657 Succubus SE (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Succ','WaterSucc']]):
@@ -14608,11 +14612,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#658 Succubus (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Succ','WaterSucc','SSucc','WaterSSucc']]):
@@ -14634,11 +14638,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#659 Succubus SE (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Succ','WoodSucc']]):
@@ -14660,11 +14664,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#660 Succubus (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Succ','WoodSucc','SSucc','WoodSSucc']]):
@@ -14686,11 +14690,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#661 Succubus SE (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Succ','LightSucc']]):
@@ -14712,11 +14716,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#662 Succubus (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Succ','LightSucc','SSucc','LightSSucc']]):
@@ -14738,11 +14742,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#663 Succubus SE (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Succ','DarkSucc']]):
@@ -14764,11 +14768,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#664 Succubus (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Succ','DarkSucc','SSucc','DarkSSucc']]):
@@ -14790,11 +14794,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#665 Succubus SE (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Sun','FireSun','Wukong','FireWukong']]):
@@ -14816,11 +14820,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#666 Sun Wukong (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Sun','WaterSun','Wukong','WaterWukong']]):
@@ -14842,11 +14846,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#667 Sun Wukong (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Sun','WoodSun','Wukong','WoodWukong']]):
@@ -14868,11 +14872,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#668 Sun Wukong (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Sun','LightSun','Wukong','LightWukong']]):
@@ -14894,11 +14898,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#669 Sun Wukong (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Sun','DarkSun','Wukong','DarkWukong']]):
@@ -14920,11 +14924,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#670 Sun Wukong (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Sura','FireSura']]):
@@ -14946,11 +14950,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#671 Sura (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Sura','WaterSura']]):
@@ -14972,11 +14976,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#672 Sura (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Sura','WoodSura']]):
@@ -14998,11 +15002,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#673 Sura (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Sura','LightSura']]):
@@ -15024,11 +15028,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#674 Sura (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Sura','DarkSura']]):
@@ -15050,11 +15054,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#675 Sura (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
 
@@ -15079,11 +15083,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#679 Tai (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Tai ','DarkTai']]):
@@ -15105,11 +15109,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#680 Tai (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Tany','FireTany']]):
@@ -15131,11 +15135,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#681 Tanya (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
 
@@ -15159,11 +15163,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#684 Tanya (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Tany','DarkTany']]):
@@ -15185,11 +15189,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#685 Tanya (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Thor','FireThor']]):
@@ -15211,11 +15215,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#686 Thor (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Thor','WaterThor']]):
@@ -15237,11 +15241,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#687 Thor (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Thor','WoodThor']]):
@@ -15263,11 +15267,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#688 Thor (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Thor','LightThor']]):
@@ -15289,11 +15293,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#689 Thor (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Thor','DarkThor']]):
@@ -15315,11 +15319,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#690 Thor (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Tiga','FireTiga']]):
@@ -15341,11 +15345,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#691 Tigar (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Tiga','WaterTiga']]):
@@ -15367,11 +15371,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#692 Tigar (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Tiga','WoodTiga']]):
@@ -15393,11 +15397,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#693 Tigar (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Tiga','LightTiga']]):
@@ -15419,11 +15423,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#694 Tigar (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Tiga','DarkTiga']]):
@@ -15445,11 +15449,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#695 Tigar (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
 
@@ -15474,11 +15478,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#699 Toadora (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Toad','DarkToad']]):
@@ -15500,11 +15504,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#700 Toadora (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Truf','FireTruf']]):
@@ -15526,11 +15530,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#701 Truffel (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
 
@@ -15555,11 +15559,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#705 Truffel (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Valk','FireValk']]):
@@ -15581,11 +15585,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#706 Valkyrie (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Valk','WaterValk']]):
@@ -15607,11 +15611,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#707 Valkyrie (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Valk','WoodValk']]):
@@ -15633,11 +15637,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#708 Valkyrie (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Valk','LightValk']]):
@@ -15659,11 +15663,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#709 Valkyrie (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Valk','DarkValk']]):
@@ -15685,11 +15689,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#710 Valkyrie (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Vamp','FireVamp']]):
@@ -15711,11 +15715,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#711 Vampire (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Vamp','WaterVamp']]):
@@ -15737,11 +15741,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#712 Vampire (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Vamp','WoodVamp']]):
@@ -15763,11 +15767,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#713 Vampire (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Vamp','LightVamp']]):
@@ -15789,11 +15793,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#714 Vampire (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Vamp','DarkVamp']]):
@@ -15815,11 +15819,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#715 Vampire (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
 
@@ -15844,11 +15848,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#719 Venus (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Venu','DarkVenu']]):
@@ -15870,11 +15874,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#720 Venus (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Verd','FireVerd']]):
@@ -15896,11 +15900,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#721 Verde (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Verd','WaterVerd']]):
@@ -15922,11 +15926,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#722 Verde (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Verd','WoodVerd']]):
@@ -15948,11 +15952,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#723 Verde (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Verd','LightVerd']]):
@@ -15974,11 +15978,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#724 Verde (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Verd','DarkVerd']]):
@@ -16000,11 +16004,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#725 Verde (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Vict','FireVict']]):
@@ -16026,11 +16030,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#726 Victoria (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Vict','FireVict','SVict','FireSVict']]):
@@ -16052,11 +16056,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#727 Victoria SE (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Vict','WaterVict']]):
@@ -16078,11 +16082,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#728 Victoria (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Vict','WaterVict','SVict','WaterSVict']]):
@@ -16104,11 +16108,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#729 Victoria SE (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Vict','WoodVict']]):
@@ -16130,11 +16134,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#730 Victoria (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Vict','WoodVict','SVict','WoodSVict']]):
@@ -16156,11 +16160,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#731 Victoria SE (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Vict','LightVict']]):
@@ -16182,11 +16186,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#732 Victoria (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Vict','LightVict','SVict','LightSVict']]):
@@ -16208,11 +16212,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#733 Victoria SE (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Vict','DarkVict']]):
@@ -16234,11 +16238,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#734 Victoria (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Vict','DarkVict','SVict','DarkSVict']]):
@@ -16260,11 +16264,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#735 Victoria SE (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Wend','FireWend']]):
@@ -16286,11 +16290,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#736 Wendigo (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Wend','WaterWend']]):
@@ -16312,11 +16316,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#737 Wendigo (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Wend','WoodWend']]):
@@ -16338,11 +16342,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#738 Wendigo (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Wend','LightWend']]):
@@ -16364,11 +16368,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#739 Wendigo (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Wend','DarkWend']]):
@@ -16390,11 +16394,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#740 Wendigo (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Wild','FireWild']]):
@@ -16416,11 +16420,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#741 Wildfang (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Wild','FireWild','SWild','FireSWild']]):
@@ -16442,11 +16446,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#742 Wildfang SE (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Wild','WaterWild']]):
@@ -16468,11 +16472,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#743 Wildfang (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Wild','WaterWild','SWild','WaterSWild']]):
@@ -16494,11 +16498,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#744 Wildfang SE (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Wild','WoodWild']]):
@@ -16520,11 +16524,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#745 Wildfang (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Wild','WoodWild','SWild','WoodSWild']]):
@@ -16546,11 +16550,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#746 Wildfang SE (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Wild','LightWild']]):
@@ -16572,11 +16576,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#747 Wildfang (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Wild','LightWild','SWild','LightSWild']]):
@@ -16598,11 +16602,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#748 Wildfang SE (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Wild','DarkWild']]):
@@ -16624,11 +16628,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#749 Wildfang (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Wild','DarkWild','SWild','DarkSWild']]):
@@ -16650,11 +16654,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#750 Wildfang SE (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
 
@@ -16679,11 +16683,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#754 Woolf (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Wool','DarkWool']]):
@@ -16705,11 +16709,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#755 Woolf (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Worm','FireWorm']]):
@@ -16731,11 +16735,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#756 Wormtail (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Worm','WaterWorm']]):
@@ -16757,11 +16761,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#757 Wormtail (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Worm','WoodWorm']]):
@@ -16783,11 +16787,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#758 Wormtail (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
 
@@ -16811,11 +16815,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#761 Wumoo (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Wumo','WaterWumo']]):
@@ -16837,11 +16841,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#762 Wumoo (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Wumo','WoodWumo']]):
@@ -16863,11 +16867,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#763 Wumoo (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
 
@@ -16891,11 +16895,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#766 Yaksha (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Yaks','WaterYaks']]):
@@ -16917,11 +16921,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#767 Yaksha (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Yaks','WoodYaks']]):
@@ -16943,11 +16947,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#768 Yaksha (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Yaks','LightYaks']]):
@@ -16969,11 +16973,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#769 Yaksha (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Yaks','DarkYaks']]):
@@ -16995,11 +16999,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#770 Yaksha (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Yeti','FireYeti']]):
@@ -17021,11 +17025,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#771 Yeti (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Yeti','WaterYeti']]):
@@ -17047,11 +17051,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#772 Yeti (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Yeti','WoodYeti']]):
@@ -17073,11 +17077,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#773 Yeti (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Yeti','LightYeti']]):
@@ -17099,11 +17103,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#774 Yeti (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Yeti','DarkYeti']]):
@@ -17125,11 +17129,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#775 Yeti (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Yuki','FireYuki']]):
@@ -17151,11 +17155,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#776 Yuki (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Yuki','FireYuki','SYuki','FireSYuki']]):
@@ -17177,11 +17181,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#777 Yuki SE (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Yuki','WaterYuki']]):
@@ -17203,11 +17207,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#778 Yuki (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Yuki','WaterYuki','SYuki','WaterSYuki']]):
@@ -17229,11 +17233,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#779 Yuki SE (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Yuki','WoodYuki']]):
@@ -17255,11 +17259,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#780 Yuki (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Yuki','WoodYuki','SYuki','WoodSYuki']]):
@@ -17281,11 +17285,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#781 Yuki SE (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Yuki','LightYuki']]):
@@ -17307,11 +17311,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#782 Yuki (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Yuki','LightYuki','SYuki','LightSYuki']]):
@@ -17333,11 +17337,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#783 Yuki SE (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Yuki','DarkYuki']]):
@@ -17359,11 +17363,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#784 Yuki (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Yuki','DarkYuki','SYuki','DarkSYuki']]):
@@ -17385,11 +17389,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#785 Yuki SE (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Zari','FireZari']]):
@@ -17411,11 +17415,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#786 Zarid (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Zari','WaterZari']]):
@@ -17437,11 +17441,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#787 Zarid (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Zari','WoodZari']]):
@@ -17463,11 +17467,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#788 Zarid (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Zari','LightZari']]):
@@ -17489,11 +17493,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#789 Zarid (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Zari','DarkZari']]):
@@ -17515,11 +17519,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#790 Zarid (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Zhu','FireZhu']]):
@@ -17541,11 +17545,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#791 Zhu Bajie  (Fire)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Zhu','WaterZhu']]):
@@ -17567,11 +17571,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#792 Zhu Bajie  (Water)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Zhu','WoodZhu']]):
@@ -17593,11 +17597,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#793 Zhu Bajie  (Wood)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Zhu','LightZhu']]):
@@ -17619,11 +17623,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#794 Zhu Bajie  (Light)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 
  if any([message.content.startswith (item) for item in ['Zhu','DarkZhu']]):
@@ -17645,11 +17649,11 @@ async def on_message(message):
      p = ((5.5*b*1.68*(1+d*(e+0.54)))*0.5) 
      q = ((5.5*b*1.68*(1+d*e))*0.5) 
      r = ((5.5*b*(1+d*e))*0.5) 
-     embed=discord.Embed(title="", url='', color=0xffffff)
+     embed=discord.Embed(title="", url='', color=message_color)
      embed.set_author(name='**#795 Zhu Bajie  (Dark)**')
      embed.set_thumbnail(url='')
      embed.add_field(name='★★★★★', value="gems = eHP : damage\n3xAtt = " + str(round(f)) + " : " + str(round(k)) + "\nAtt/Att/CD = " + str(round(f)) + " : " + str(round(l)) + "\nAtt/Att/CR = " + str(round(f)) + " : " + str(round(m)) + "\n\nAtt/Att/HP = " + str(round(g)) + " : " + str(round(n)) + "\nAtt/CD/HP = " + str(round(g)) + " : " + str(round(o)) + "\nAtt/CR/HP = " + str(round(g)) + " : " + str(round(p)) + "\n\nAtt/def/HP = " + str(round(h)) + " : " + str(round(q)) + "\nHP/HP/Def = " + str(round(i)) + " : " + str(round(r)) + "\n3xHP = " + str(round(j)) + " : " + str(round(r)), inline=False)
-     await client.send_message(message.channel, embed=embed)
+     await message.channel.send(embed=embed)
 
 #####################################################################
 
@@ -17659,5 +17663,4 @@ async def on_ready():
  print( "[ON]")
  print('- - - - - - - -')
 
-
-client.run('NjE4NTUzNzg4MzYxNDc0MDU4.XW7kng.wwg2uirainyrm-yiiV_DLolDqVs')
+client.run(TOKEN)
